@@ -26,7 +26,7 @@ body {
   color: white;
 }
 
-/* Remaining CSS is unchanged from the previous version */
+/* Title and Subtitle Styles */
 .pricing-title {
   font-size: 48px;
   font-weight: bold;
@@ -36,10 +36,11 @@ body {
 
 .pricing-subtitle {
   font-size: 18px;
-  color: #d3d3d3;
+  color: rgba(211, 211, 211, 0.8); /* Slight transparency for better contrast */
   margin-bottom: 30px;
 }
 
+/* Pricing Table Styles */
 .pricing-table {
   display: flex;
   justify-content: center;
@@ -47,11 +48,12 @@ body {
   flex-wrap: wrap;
 }
 
+/* Pricing Card Styles */
 .pricing-card {
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 300px;
   padding: 30px;
   text-align: center;
@@ -60,7 +62,7 @@ body {
 
 .pricing-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .card-title {
@@ -90,6 +92,7 @@ body {
   margin: 10px 0;
 }
 
+/* Buy Now Button */
 .buy-now-btn {
   background-color: #28a745;
   border: none;
@@ -106,6 +109,7 @@ body {
   transform: scale(1.05);
 }
 
+/* Popular Card Badge */
 .popular {
   border: 2px solid #28a745;
   position: relative;
@@ -123,4 +127,30 @@ body {
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 10px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+.popular:hover {
+  box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-container {
+    padding: 20px;
+  }
+  .pricing-card {
+    width: 90%; /* Reduce width for better stacking */
+  }
 }
