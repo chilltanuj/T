@@ -1,7 +1,5 @@
 "use client"; // Mark this file as a client component
 
-import Image from "next/image";
-import Button from "./Button";
 import Head from "next/head";
 import styles from "../app/home.module.css";
 import React, { useEffect, useState } from "react";
