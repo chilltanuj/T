@@ -10,6 +10,8 @@ export default function Home() {
   useEffect(() => {
     if (typeof window.ethereum !== "undefined") {
       console.log("Injected Web3 Wallet is installed!");
+    } else {
+      console.warn("MetaMask or another Web3 wallet is not installed.");
     }
   }, []);
 
@@ -36,23 +38,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <button className={styles.connect} onClick={connectAccount}>
+      <button
+        className={styles.connect}
+        onClick={connectAccount}
+        aria-label="Connect MetaMask Wallet"
+      >
         {account
           ? `${account.slice(0, 6)}...${account.slice(-4)}`
           : "Connect Wallet"}
       </button>
 
-      <Hero connectAccount={connectAccount} account={account} />
+      <Hero account={account} />
     </div>
   );
 }
 
 type HeroProps = {
-  connectAccount: () => void;
   account: string | null;
 };
 
-const Hero: React.FC<HeroProps> = ({ connectAccount, account }) => {
+const Hero: React.FC<HeroProps> = ({ account }) => {
   return (
     <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
       <div className="hero-map" />
@@ -67,28 +72,23 @@ const Hero: React.FC<HeroProps> = ({ connectAccount, account }) => {
         <div className="flex flex-col w-full gap-3 sm:flex-row">
           <button
             className={styles.connect}
-            onClick={connectAccount}
-            style={{
-              padding: "10px 30px",
-              fontSize: "16px",
-              width: "250px",
-              textAlign: "center",
+            onClick={() => {
+              alert("Redirect to adventure plans!");
             }}
+            aria-label="Explore Adventure Options"
           >
-            {account
-              ? `${account.slice(0, 6)}...${account.slice(-4)}`
-              : "Connect Wallet"}
+            {account ? "Explore Your Wallet" : "Plan Your Adventure"}
           </button>
         </div>
       </div>
 
       <div className="relative flex flex-1 items-start">
         <div className="relative z-20 flex w-[268px] flex-col gap-8 rounded-3xl bg-green-90 px-7 py-8">
-          <div className="flexBetween">
+          <div className="flex justify-between">
             <p className="regular-16 text-gray-20">Location</p>
             <p className="bold-20 text-white">Mount Everest</p>
           </div>
-          <div className="flexBetween">
+          <div className="flex justify-between">
             <div>
               <p className="regular-16 text-gray-20">Distance</p>
               <p className="bold-20 text-white">173.28 mi</p>
