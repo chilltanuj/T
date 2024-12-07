@@ -78,17 +78,15 @@ const Hero: React.FC<HeroProps> = ({ connectAccount, account }) => {
 
         <div className="my-11 flex flex-wrap gap-5">
           <div className="flex items-center gap-2">
-            {Array(5)
-              .fill(1)
-              .map((_, index) => (
-                <Image
-                  src="/star.svg"
-                  key={index}
-                  alt="star"
-                  width={24}
-                  height={24}
-                />
-              ))}
+            {Array.from({ length: 5 }).map((_, index) => (
+              <Image
+                src="/star.svg"
+                key={`star-${index}`} // Unique key for each star
+                alt="star"
+                width={24}
+                height={24}
+              />
+            ))}
           </div>
 
           <p className="bold-16 lg:bold-20 text-blue-70">
@@ -100,25 +98,24 @@ const Hero: React.FC<HeroProps> = ({ connectAccount, account }) => {
         </div>
 
         <div className="flex flex-col w-full gap-3 sm:flex-row">
-        <button
-  className={styles.connect}
-  onClick={connectAccount}
-  style={{
-    padding: "10px 30px", // Adjust padding to balance vertical spacing
-    fontSize: "16px",
-    width: "250px", // Define width for consistency
-    textAlign: "center", // Center text horizontally
-    lineHeight: "20px", // Ensure text is vertically aligned
-    display: "flex", // Use flexbox to align content
-    justifyContent: "center", // Horizontally center content
-    alignItems: "center", // Vertically center content
-  }}
->
-  {account
-    ? `${account.slice(0, 6)}...${account.slice(-4)}`
-    : "Connect To Wallet"}
-</button>
-
+          <button
+            className={styles.connect}
+            onClick={connectAccount}
+            style={{
+              padding: "10px 30px",
+              fontSize: "16px",
+              width: "250px",
+              textAlign: "center",
+              lineHeight: "20px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {account
+              ? `${account.slice(0, 6)}...${account.slice(-4)}`
+              : "Connect To Wallet"}
+          </button>
         </div>
       </div>
 
