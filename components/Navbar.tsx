@@ -2,6 +2,7 @@ import { NAV_LINKS } from "@/constants"
 import Image from "next/image"
 import Link from "next/link"
 import Button from "./Button"
+import pricing from "@/pages/pricing"
 
 const Navbar = () => {
   return (
@@ -9,6 +10,7 @@ const Navbar = () => {
       <Link href="/">
         <Image src="/TRAVEL.svg" alt="logo" width={174} height={29} />
       </Link>
+      
 
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
@@ -17,7 +19,7 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-
+        
       <div className="lg:flexCenter hidden">
         <Button 
           type="button"
@@ -25,8 +27,9 @@ const Navbar = () => {
           icon="/user.svg"
           variant="btn_dark_green"
         />
+        
       </div>
-
+      
       <Image 
         src="menu.svg"
         alt="menu"
@@ -35,6 +38,11 @@ const Navbar = () => {
         className="inline-block cursor-pointer lg:hidden"
       />
     </nav>
+    
+
+
+
+
   )
 }
 

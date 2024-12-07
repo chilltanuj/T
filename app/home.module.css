@@ -1,0 +1,26 @@
+/* Home.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdfeff;
+  height: 100vh;
+}
+
+.connect {
+  background-color: #121312;
+  border-style: none;
+  border-radius: 200px;
+  height: 40px; /* Reduced height for a smaller button */
+  width: 150px; /* Reduced width for a smaller button */
+  font-size: 16px; /* Adjusted font size */
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3); /* Reduced shadow intensity */
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.connect:hover {
+  background-color: #45b831; /* Hover effect */
+}

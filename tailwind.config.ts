@@ -47,6 +47,7 @@ module.exports = {
       borderRadius: {
         '5xl': '40px',
       },
+      
     },
   },
   plugins: [],

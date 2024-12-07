@@ -1,0 +1,127 @@
+/* Reset default backgrounds for consistency */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e3d33; /* Dark green background to match the container */
+  font-family: Arial, sans-serif;
+  height: 100%; /* Ensure the body spans the full height */
+}
+
+/* Styling the main container */
+.pricing-container {
+  position: relative;
+  background-color: #1e3d33; /* Dark green background */
+  background: radial-gradient(
+    circle,
+    rgba(30, 61, 51, 0.5) 0%,
+    rgba(10, 26, 21, 1) 100%
+  ); /* Gradient overlay */
+  padding: 40px;
+  text-align: center;
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Remaining CSS is unchanged from the previous version */
+.pricing-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.pricing-subtitle {
+  font-size: 18px;
+  color: #d3d3d3;
+  margin-bottom: 30px;
+}
+
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  color: #555555;
+  text-align: left;
+}
+
+.card-features li {
+  margin: 10px 0;
+}
+
+.buy-now-btn {
+  background-color: #28a745;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-now-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.popular {
+  border: 2px solid #28a745;
+  position: relative;
+}
+
+.popular::before {
+  content: "Most Popular";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
